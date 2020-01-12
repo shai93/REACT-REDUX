@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 // import First from './First';
 import Second from './Second';
+import Form from './Form';
 
 class App extends React.Component {
 
@@ -32,7 +33,8 @@ class App extends React.Component {
     return (
       <div className="App">
         {/* <First count={this.count}></First> */}
-        <Second count={this.state.count} handleIncCount={this.handleIncCount} handleResetCount={this.handleResetCount} handleDecCount={this.handleDecCount}/>
+        {/* <Second count={this.state.count} handleIncCount={this.handleIncCount} handleResetCount={this.handleResetCount} handleDecCount={this.handleDecCount}/> */}
+        <Form></Form>
       </div>
     );
   }
