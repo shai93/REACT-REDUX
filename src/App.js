@@ -3,11 +3,15 @@ import './App.css';
 // import First from './First';
 import Second from './Second';
 import Form from './Form';
+import Portalroot from './Portalroot';
+import { UserProvider, userContext } from './User';
+import C from './C';
 
 class App extends React.Component {
 
   state = {
     count:0,
+    username:"shailesh"
   }
 
   handleIncCount=()=>{
@@ -34,7 +38,15 @@ class App extends React.Component {
       <div className="App">
         {/* <First count={this.count}></First> */}
         {/* <Second count={this.state.count} handleIncCount={this.handleIncCount} handleResetCount={this.handleResetCount} handleDecCount={this.handleDecCount}/> */}
-        <Form></Form>
+        {/* <Form></Form> */}
+        {/* <Portalroot></Portalroot> */}
+        
+        <UserProvider value={this.state.username}>
+            <UserProvider value={this.state.count}>
+              <C></C>
+            </UserProvider>
+            <C></C>
+        </UserProvider>
       </div>
     );
   }
