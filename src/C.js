@@ -4,7 +4,8 @@ class C extends React.Component{
 
     render(){
         return(
-          <D></D>
+            <div>D Component</div>
+        //   <D></D>
         )
         
     }
