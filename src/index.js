@@ -10,3 +10,33 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+// cake shop example with pure redux
+// import {createStore} from 'redux';
+// const reducer = (state, action)=>{
+
+//     switch(action.type){
+//         case "BLACKFOREST":
+//             state = state+action.payload
+//             break;
+//         case "FRUIT":
+//             break;
+//     }
+//     return state;
+// }
+
+// const store = createStore(reducer,1)
+
+// store.subscribe(()=>{
+//     console.log('state updated!', store.getState())
+// })
+
+// store.dispatch({
+//     type:"CHOCOLATECAKE",
+//     payload:50
+// })
+// store.dispatch({
+//     type:"BLACKFOREST",
+//     payload:30
+// })
+
