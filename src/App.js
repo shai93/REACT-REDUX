@@ -14,7 +14,13 @@ class App extends React.Component {
         </div>
         <button onClick={this.props.ageUp}>Up</button>
         <button onClick={this.props.ageDown}>Down</button>
-        <Child></Child>
+        <ul>
+            {
+              this.props.history.map((ele)=>{
+                return <li key={ele.id} onClick={()=>this.props.handlRemove(ele.id)}>{ele.age}</li>
+              })
+            }
+        </ul>
       </div>
     );
   }
@@ -23,14 +29,16 @@ class App extends React.Component {
 // store state to component
 const mapStatetoProps = (state)=>{
   return {
-    age:state.age
+    age:state.age,
+    history:state.history
   }
 }
 
 const mapDispatchtoProps = (dispatch)=>{
   return {
-    ageUp:()=>dispatch({type:"AGE_UP"}),
-    ageDown:()=>dispatch({type:"AGE_DOWN"})
+    ageUp:()=>dispatch({type:"AGE_UP", value:1}),
+    ageDown:()=>dispatch({type:"AGE_DOWN", value:1}),
+    handlRemove:(id)=>dispatch({type:"REMOVE", key:id})
   }
 }
 
